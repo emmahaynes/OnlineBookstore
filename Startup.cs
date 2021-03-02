@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Emma Haynes 3-1-21
+
 namespace OnlineBookstore
 {
     public class Startup
@@ -27,6 +29,7 @@ namespace OnlineBookstore
         {
             services.AddControllersWithViews();
 
+            //Making the Online Books database
             services.AddDbContext<BooksDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:OnlineBooksConnection"]);
@@ -61,6 +64,8 @@ namespace OnlineBookstore
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SeedData.EnsurePopulated(app); //Seed data from seeddata.cs into database
         }
     }
 }
