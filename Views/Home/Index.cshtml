@@ -2,19 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Book>
-
+@model BookListViewModel
 <!--Emma Haynes 3-1-21-->
 
-<div class="bg-secondary">
+<div>
 
-    <header class="m-5 p-5 text-white">
-        <h1>Buy Books!!</h1>
-    </header>
-
-    @foreach (var x in Model) //Loops through and prints data for each book in database
+    @foreach (var x in Model.Books) //Loops through and prints data for each book in database
     {
-        <div class="card card-outline-primary m-5 pb-5">
+        <div class="card card-outline-primary m-5 pb-5 text-dark">
             <div class="bg-faded p-1">
                 <h3>
                     @x.Title
@@ -29,8 +24,14 @@
                 <p>ISBN: @x.ISBN</p>
                 <p>Classification: @x.Classification</p>
                 <p>Category: @x.Category</p>
+                <p>Number of Pages: @x.NumPages</p>
             </div>
 
         </div>
     }
+
+    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+         page-class-normal="btn-outline-dark"
+         page-class-selected="btn-primary"
+         class="btn-group pull-right m-1 p-2"></div>
 </div>

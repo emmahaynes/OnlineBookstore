@@ -35,7 +35,8 @@ namespace OnlineBookstore
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95f //f to specify kind of float
+                        Price = 9.95f, //f to specify kind of float
+                        NumPages = 1488
                     },
                     new Book
                     {
@@ -47,7 +48,8 @@ namespace OnlineBookstore
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58f
+                        Price = 14.58f,
+                        NumPages = 944
                     },
                     new Book
                     {
@@ -58,7 +60,8 @@ namespace OnlineBookstore
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54f
+                        Price = 21.54f,
+                        NumPages = 832
                     },
                     new Book
                     {
@@ -70,7 +73,8 @@ namespace OnlineBookstore
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61f
+                        Price = 11.61f,
+                        NumPages = 864
                     },
                     new Book
                     {
@@ -81,7 +85,8 @@ namespace OnlineBookstore
                         ISBN = "978-0812974492",
                         Classification = "Non-Fiction",
                         Category = "Historical",
-                        Price = 13.33f
+                        Price = 13.33f,
+                        NumPages = 528
                     },
                     new Book
                     {
@@ -92,7 +97,8 @@ namespace OnlineBookstore
                         ISBN = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
-                        Price = 15.95f
+                        Price = 15.95f,
+                        NumPages = 288
                     },
                     new Book
                     {
@@ -103,7 +109,8 @@ namespace OnlineBookstore
                         ISBN = "978-1455586691",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 14.99f
+                        Price = 14.99f,
+                        NumPages = 304
                     },
                     new Book
                     {
@@ -114,7 +121,8 @@ namespace OnlineBookstore
                         ISBN = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 21.66f
+                        Price = 21.66f,
+                        NumPages = 240
                     },
                     new Book
                     {
@@ -125,7 +133,8 @@ namespace OnlineBookstore
                         ISBN = "978-1591847984",
                         Classification = "Non-Fiction",
                         Category = "Business",
-                        Price = 29.16f
+                        Price = 29.16f,
+                        NumPages = 400
                     },
                     new Book
                     {
@@ -136,7 +145,44 @@ namespace OnlineBookstore
                         ISBN = "978-0553393613",
                         Classification = "Fiction",
                         Category = "Thrillers",
-                        Price = 15.03f
+                        Price = 15.03f,
+                        NumPages = 642
+                    },
+                    new Book
+                    {
+                        Title = "Pride and Prejudice",
+                        AuthorFirstName = "Jane",
+                        AuthorLastName = "Austen",
+                        Publisher = "Wordsworth",
+                        ISBN = "978-1853260001",
+                        Classification = "Fiction",
+                        Category = "Romance",
+                        Price = 5.99f,
+                        NumPages = 376
+                    },
+                    new Book
+                    {
+                        Title = "Educated",
+                        AuthorFirstName = "Tara",
+                        AuthorLastName = "Westover",
+                        Publisher = "Random House",
+                        ISBN = "978-0399590511",
+                        Classification = "Non-Fiction",
+                        Category = "Autobiography",
+                        Price = 13.00f,
+                        NumPages = 334
+                    },
+                    new Book
+                    {
+                        Title = "The Book Thief",
+                        AuthorFirstName = "Markus",
+                        AuthorLastName = "Zusak",
+                        Publisher = "Random House",
+                        ISBN = "978-0307433848",
+                        Classification = "Fiction",
+                        Category = "Historical Fiction",
+                        Price = 10.99f,
+                        NumPages = 592
                     }
                 );
 

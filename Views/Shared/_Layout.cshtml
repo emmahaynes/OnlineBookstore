@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2 text-uppercase">Online Bookstore</span>
+    </div>
+    <div class="row m-1 p-1 bg-info text-white">
+        <div id="blah" class="col-3">
+            <h1>Buy books today!</h1>
+        </div>
+        <div class="col-8">
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>

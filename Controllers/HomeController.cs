@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OnlineBookstore.Models;
+using OnlineBookstore.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,6 +17,7 @@ namespace OnlineBookstore.Controllers
         private readonly ILogger<HomeController> _logger; //database setup
 
         private IBooksRepository _repository;
+        public int PageSize = 5; //number of items displayed on each page
 
         public HomeController(ILogger<HomeController> logger, IBooksRepository repository)
         {
@@ -23,9 +25,22 @@ namespace OnlineBookstore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1) //pagination setup
         {
-            return View(_repository.Books); //allow the index page to display books from the repository
+            return View(new BookListViewModel
+            {
+                Books = _repository.Books
+                    .OrderBy(p => p.BookId)
+                    .Skip((page - 1) * PageSize)
+                    .Take(PageSize)
+                ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Books.Count()
+                }
+            });
         }
 
         public IActionResult Privacy()
