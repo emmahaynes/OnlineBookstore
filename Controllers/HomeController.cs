@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-//Emma Haynes 3-1-21
+//Emma Haynes 3-3-21
 
 namespace OnlineBookstore.Controllers
 {
@@ -25,11 +25,12 @@ namespace OnlineBookstore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1) //pagination setup
+        public IActionResult Index(string category, int page = 1) //pagination setup
         {
             return View(new BookListViewModel
             {
                 Books = _repository.Books
+                    .Where(p => category == null || p.Category == category) //allows for a null category
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
@@ -38,8 +39,10 @@ namespace OnlineBookstore.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.Category == category).Count() //checking for category matching
+                },
+                CurrentCategory = category
             });
         }
 
