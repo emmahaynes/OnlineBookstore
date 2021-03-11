@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<string>
 
+<!--Emma Haynes 3-10-21-->
+
 <a class="btn btn-block btn-outline-dark" asp-action="Index" asp-controller="Home"
    asp-route-category="">Home</a>
 
@@ -10,7 +12,7 @@
        asp-action="Index"
        asp-controller="Home"
        asp-route-category="@category"
-       asp-route-page="1">
+       asp-route-pageNum="1"> <!--Remember that page can not be used! Updated all "page" references to pageNum-->
         @category
     </a>
 }
